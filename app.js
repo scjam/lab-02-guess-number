@@ -5,13 +5,13 @@ const userInput = document.getElementById('user-input');
 const guessButton = document.getElementById('guess-button');
 const lastGuess = document.getElementById('last-guess-span');
 const image = document.getElementById('meme-image');
-// const resetButton = document.getElementById('reset-button');
+const counterSpan = document.getElementById('counter-span');
 
 // initialize state
 const computerNumber = Math.ceil(Math.random() * 20);
-console.log(computerNumber);
 
 let guessCounter = 4;
+counterSpan.textContent = guessCounter;
 
 // set event listeners to update state and DOM
 guessButton.addEventListener('click', () => {
@@ -21,22 +21,18 @@ guessButton.addEventListener('click', () => {
     const resultsOfCompare = compareNumbers(value, computerNumber);
 
     if (resultsOfCompare === 0) {
-        image.src = 'assets/too-low.jpg';
-        lastGuess.textContent = 'That guess is too low.';
-    }
+        image.src = 'assets/correct.jpg';
+        lastGuess.textContent = 'You are correct!';
+    } 
     if (resultsOfCompare === 1) {
         image.src = 'assets/too-high.jpg';
         lastGuess.textContent = 'That guess is too high.';
     } 
     if (resultsOfCompare === -1) {
-        image.src = 'assets/correct.jpg';
-        lastGuess.textContent = 'You are correct!';
-    } 
+        image.src = 'assets/too-low.jpg';
+        lastGuess.textContent = 'That guess is too low.';
+    }
 
-    //display counter of remaining
+    counterSpan.textContent = guessCounter;
 
 });
-
-// resetButton.addEventListener('click', () => {
-//     resetGame();
-// });
