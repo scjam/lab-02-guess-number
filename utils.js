@@ -11,11 +11,3 @@ export function compareNumbers(guess, correctNumber) {
     }
     
 }
-
-export function resetGame(image, counterSpan, lastGuess, guessCounter) {
-    guessCounter = 4;
-
-    counterSpan.textContent = guessCounter;
-    image.src = 'assets/start-guessing.png';
-    lastGuess.textContent = '';
-}
