@@ -1,5 +1,5 @@
 # lab-02-guess-number
-##Guess A Number
+## Guess A Number
 
 State: Guesses
 
